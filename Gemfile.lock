@@ -1,0 +1,15 @@
+GEM
+  specs:
+    nio4r (2.7.4)
+    puma (6.5.0)
+      nio4r (~> 2.0)
+
+PLATFORMS
+  arm64-darwin-24
+  ruby
+
+DEPENDENCIES
+  puma
+
+BUNDLED WITH
+   2.5.22
