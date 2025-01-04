@@ -6,8 +6,7 @@ class App
       [
         200, 
         { 
-          "content-type" => "text/html",
-          "path-info" => env['PATH_INFO']
+          "content-type" => "text/html"
         },
         ["Hello, Rack"]
       ] 
@@ -15,8 +14,7 @@ class App
       [
         200, 
         { 
-          "content-type" => "text/html",
-          "path-info" => env['PATH_INFO']
+          "content-type" => "text/html"
         },
         ["Contacts"]
       ]
@@ -24,8 +22,7 @@ class App
       [
         400, 
         { 
-          "content-type" => "text/html",
-          "path-info" => env['PATH_INFO']
+          "content-type" => "text/html"
         },
         ["Unavaliable path"]
       ]         
