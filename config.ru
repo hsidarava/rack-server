@@ -1,11 +1,35 @@
 
 class App
   def call(env)
-  [
-    200, 
-    {"content-type" => "text/html"},
-    ["Hello, Rack"]
-  ]
+    case env['PATH_INFO']
+    when "/"
+      [
+        200, 
+        { 
+          "content-type" => "text/html",
+          "path-info" => env['PATH_INFO']
+        },
+        ["Hello, Rack"]
+      ] 
+    when "/contacts"
+      [
+        200, 
+        { 
+          "content-type" => "text/html",
+          "path-info" => env['PATH_INFO']
+        },
+        ["Contacts"]
+      ]
+    else
+      [
+        400, 
+        { 
+          "content-type" => "text/html",
+          "path-info" => env['PATH_INFO']
+        },
+        ["Unavaliable path"]
+      ]         
+    end
   end
 end 
 
