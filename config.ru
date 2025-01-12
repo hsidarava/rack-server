@@ -1,15 +1,13 @@
+require 'rack'
+
 
 class App
   def call(env)
-    case env['PATH_INFO']
-    when "/"
-      [
-        200, 
-        { 
-          "content-type" => "text/html"
-        },
-        ["Hello, Rack"]
-      ] 
+    req = Rack::Request.new(env)
+    case req.path
+    when "/" 
+      response = Rack::Response.new(["Hello, Rack"], 200, {"content-type" => "text/html"})
+      return response
     when "/contacts"
       [
         200, 
