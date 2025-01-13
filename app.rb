@@ -6,13 +6,11 @@ class App
     case req.path
     when "/" 
       response = Rack::Response.new(["Hello, Rack"], 200, {"content-type" => "text/html"})
-      return response.finish
     when "/contacts"
       response = Rack::Response.new(["Contacts"], 200, {"content-type" => "text/html"})
-      return response.finish
     else
-      response = Rack::Response.new(["Unavaliable path"], 400, {"content-type" => "text/html"})
-      return response.finish         
+      response = Rack::Response.new(["Unavaliable path"], 400, {"content-type" => "text/html"})      
     end
+    response.finish   
   end
 end 
